@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cameras",
+  "info": {
+    "singularName": "camera",
+    "pluralName": "cameras",
+    "displayName": "Camera"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "cameraNo": {
+      "type": "string",
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Operational",
+        "Stopped"
+      ],
+      "default": "Operational",
+      "required": false
+    },
+    "liveFeedUrl": {
+      "type": "string",
+      "required": true
+    },
+    "accessCameras": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::access-camera.access-camera",
+      "mappedBy": "camera"
+    }
+  }
+}

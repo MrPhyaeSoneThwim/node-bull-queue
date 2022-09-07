@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "access_cameras",
+  "info": {
+    "singularName": "access-camera",
+    "pluralName": "access-cameras",
+    "displayName": "AccessCamera"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "accessCameras"
+    },
+    "expiredDate": {
+      "type": "datetime"
+    },
+    "camera": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::camera.camera",
+      "inversedBy": "accessCameras"
+    }
+  }
+}
